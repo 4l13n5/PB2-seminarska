@@ -1,0 +1,43 @@
+FUNKCIONALNE ODVISNOSTI
+
+Vrsta artikla(ID_KAT, KATEGORIJA, DAVEK)
+f.o.(ID_KAT ? {KATEGORIJA, DAVEK})
+
+Artikel(ID_ARTIKLA, #ID_KAT, IME_ARTIKLA, CENA BREZ DDV)
+f.o.(ID_ARTIKLA ? {IME_ARTIKLA, CENA BREZ DDV})
+
+artikel je v akciji (ID_AKCIJE,ID_ARTIKLA)
+f.o. (/)
+
+akcija(ID_AKCIJE, DATUM_OD, DATUM_DO, POPUST)
+f.o.(ID_AKCIJE ? {DATUM_OD, DATUM_DO, POPUST})
+
+Zaloge(ID_ZALOGE, #ID_ARTIKLA, #ID_POSLOVALNICE, KOLI?INA)
+f.o.({ID_ARTIKLA, ID_POSLOVALNICE} ? KOLI?INA)
+
+Postavka(#ID_ZALOGE, #ID_RA?, KOLI?INA_ARTIKLA)
+f.o.({#ID_ZALOGE, #ID_RA?} ? KOLI?INA_ARTIKLA)
+
+Ra?un(ID_RA?, #ID_ZAPOSLENEGA, #ID_POSLOVALNICE, SKUPNA CENA, DATUM)
+f.o.(ID_RA? ? {SKUPNA CENA, DATUM},  ID_POSLOVALNICE ? ID_ZAPOSLENEGA)
+
+Poslovalnica(ID_POSLOVALNICE, #POŠTNA_ŠT, TEL_ŠT, ULICA, HIŠNA ŠT.)
+f.o.(ID_POSLOVALNICE ? {TEL_ŠT, ULICA, HIŠNA ŠT.})
+
+Pošta(POŠTNA_ŠT, MESTO)
+f.o.(POŠTNA ŠT ? MESTO)
+
+Zaposleni(ID_ZAPOSLENEGA, IME, PRIIMEK, #POZICIJA, #ID_POSLOVALNICE)
+f.o.(ID_ZAPOSLENEGA  ? IME, PRIIMEK)
+
+Job description(POZICIJA, PLA?A)
+f.o.(POZICIJA ? PLA?A)
+
+Vse relacije so v tretji normalni obliki(dolo?eni klju?i, relacije, ni parcialni odvisnosti, ni tranzitivni odvisnosti).
+
+
+Vse transakcije so spet mogo?e za izvest.
+
+Vse števnosti, omejitve domen atributov in obveznost atributov so obdržane iz konceptualnega modela.
+
+Opredelite referencialno integritrto.??? (KAJ JE TLE MIŠLJENO?)
