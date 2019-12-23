@@ -1,8 +1,7 @@
 
-insert into posta (poštna_št,mesto) values (1000, 'ljubljana');
-
 insert all into posta 
 (poštna_št,mesto) 
+select 1000, 'Ljubljana' from dual union all
 select 3000,'Celje' from dual union all
 select 5000,'Nova Gorica' from dual;
 
@@ -17,8 +16,8 @@ select 'hisnik',800 from dual;
 
 insert into vrsta_artikla (id_kat,kategorija,davek)
 select 1,'alkohol', 22 from dual union all
-select 2,'elektronika',15 from dual;
-insert into vrsta_artikla (id_kat,kategorija,davek) values(3,'hrana',8);
+select 2,'elektronika',15 from dual union all
+select 3 ,'hrana', 8 from dual;
 
 
 
@@ -31,10 +30,10 @@ select 3,(TO_DATE('2018/11/5 00:00:00', 'yyyy/mm/dd hh24:mi:ss')),(TO_DATE('2018
 insert into artikel (id_artikla,id_kat,ime_artikla,cena_brez_ddv)
 select 1, 1, 'union', 2 from dual union all
 select 2, 1, 'lasko', 2 from dual union all
-select 3, 2, 'kruh', 1 from dual union all
-select 4, 2, 'piscanec',3 from dual union all
-select 5, 3, 'iPhone7',500 from dual union all
-select 6, 3, 'Asus k555',800 from dual;
+select 3, 3, 'kruh', 1 from dual union all
+select 4, 3, 'piscanec',3 from dual union all
+select 5, 2, 'iPhone7',500 from dual union all
+select 6, 2, 'Asus k555',800 from dual;
 
 
 
